@@ -10,7 +10,7 @@ void Database::createTable(const std::string &tableName, const std::vector<std::
         return;
     }
     tables.emplace(tableName, Table(tableName, columnNames));
-    std::cout<<"Table \""<<tableName<<"\" create successfully. \n";
+    std::cout<<"Table \""<<tableName<<"\" created successfully. \n";
 }
 
 std::shared_ptr<Table> Database::getTable(const std::string &tableName) {
