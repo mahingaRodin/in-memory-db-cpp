@@ -1,5 +1,6 @@
 #include "Table.hpp"
 #include <iostream>
+#include <fstream>
 
 // Constructor
 Table::Table(const std::string& tableName, const std::vector<std::string>& columnNames)
@@ -52,3 +53,32 @@ void Table::selectWhere(int columnIndex, const std::string& op, const std::strin
         // You can expand this with more operators (>, <, etc.) if needed.
     }
 }
+
+
+void Table::saveToFile(const std::string &fileName) const {
+std::ofstream file(fileName);
+    if (!file.is_open()) {
+        std::cerr<<"Failed to open the file: "<<fileName<<"\n";
+        return;
+    }
+
+    //write column headers
+    for (size_t i = 0; i < columns.size(); ++i) {
+        file<< columns[i] ;
+        if (i<columns.size() - 1)file<<",";
+    }
+    file<<"\n";
+
+    // Write each row
+    for (const auto& row : rows) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+
+    file.close();
+    std::cout << "Table \"" << name << "\" saved to " << fileName << "\n";
+}
+

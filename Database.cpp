@@ -35,5 +35,13 @@ void Database::listTables() const {
     }
 }
 
+void Database::saveAllTables() const {
+    for (const auto& [tableName, table] : tables) {
+        std::string filename = tableName + ".csv";
+        table.saveToFile(filename);
+    }
+}
+
+
 
 

@@ -17,5 +17,6 @@ public:
     void createTable(const std::string& tableName, const std::vector<std::string>& columns);
     std::shared_ptr<Table> getTable(const std::string& tableName);
     void listTables() const;
+    void saveAllTables() const;
 };
 #endif

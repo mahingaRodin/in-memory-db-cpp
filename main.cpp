@@ -1,4 +1,7 @@
 #include "Database.hpp"
+#include"Table.hpp"
+#include "Table.cpp"
+#include"Database.cpp"
 
 int main() {
     Database db("MyInMemoryDB");
@@ -16,6 +19,8 @@ int main() {
     }
 
     db.listTables();
+    db.saveAllTables();
+    studentsTable->saveToFile("students.csv");
 
     return 0;
 }

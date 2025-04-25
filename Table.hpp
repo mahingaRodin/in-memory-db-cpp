@@ -18,5 +18,6 @@ private:
     void printTable() const;
     void selectWhere(int columnIndex, const std::string& op, const std::string& value) const;
     const std::string& getName() const;
+    void saveToFile(const std::string& fileName) const;
 };
 #endif
