@@ -27,6 +27,10 @@ void Table::printTable() const {
     }
 }
 
+const std::string& Table::getName() const {
+    return name;
+}
+
 // Select and print rows that match a condition
 void Table::selectWhere(int columnIndex, const std::string& op, const std::string& value) const {
     if (columnIndex < 0 || columnIndex >= static_cast<int>(columns.size())) {

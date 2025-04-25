@@ -17,5 +17,6 @@ private:
     void insertRow(const std::vector<std::string>& rowData);
     void printTable() const;
     void selectWhere(int columnIndex, const std::string& op, const std::string& value) const;
+    const std::string& getName() const;
 };
 #endif
