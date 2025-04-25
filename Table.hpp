@@ -9,7 +9,7 @@ class Table {
 private:
     std::string name;
     std::vector<std::string> columns;
-    std::vector<std::string> rows;
+    std::vector<std::vector<std::string>> rows;
 
     public:
     Table(const std::string& tableName, const std::vector<std::string>& columnNames);
