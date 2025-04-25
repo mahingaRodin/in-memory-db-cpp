@@ -1,18 +1,19 @@
-#include <iostream>
-#include <string>
-
 #include "Database.hpp"
 
 int main() {
-    Database db;
-    std::string input;
+    Database db("MyInMemoryDB");
 
-    std::cout<<"Welcome to In-memory-db! Type a command to proceed: \n";
+    db.createTable("students", {"id", "name", "age"});
 
-    while (true) {
-        std::getline(std::cin, input);
-        if (input == "exit") break;
-        db.executeCommand(input);
+    Table* students = db.getTable("students").get();
+    if (students) {
+        students->insertRow({"1", "Rodin", "18"});
+        students->insertRow({"2", "Leandre", "19"});
+        students->printTable();
+        students->selectWhere(1, "==", "Leandre");
     }
+
+    db.listTables();
+
     return 0;
 }
