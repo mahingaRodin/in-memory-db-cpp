@@ -1,0 +1,3 @@
+C:/Users/user/CLionProjects/inmem-db/cmake-build-debug/CMakeFiles/inmem_db.dir
+C:/Users/user/CLionProjects/inmem-db/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/user/CLionProjects/inmem-db/cmake-build-debug/CMakeFiles/rebuild_cache.dir
